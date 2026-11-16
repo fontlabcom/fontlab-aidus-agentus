@@ -1,0 +1,120 @@
+# this_file: src/fontlab_aidus_agentus/core/agents.yml
+# Aidus Agentus AgentPool Configuration
+#
+# Model Configuration Options:
+#   model: provider:model-name (e.g., openai:gpt-4o, anthropic:claude-sonnet-4-20250514)
+#   max_tokens: Maximum response tokens (integer, default varies by model)
+#   temperature: Creativity control 0.0-2.0 (lower=deterministic, higher=creative)
+#
+# System Prompt Options:
+#   system_prompt: "inline string"
+#   system_prompt: {type: file, path: "relative/path.md"}
+#   system_prompt: {type: library, reference: "prompt_name"}
+#
+# Tool Configuration:
+#   tools: [{name: tool_name, enabled: true/false}]
+
+default_agent: fontlab_copilot
+
+agents:
+  fontlab_copilot:
+    type: native
+    # gpt-4o — flagship multimodal, 128K context. The default driver: tool-calling
+    # copilot that both reads and modifies the font. Balanced cost/capability.
+    model: openai:gpt-4o
+    system_prompt:
+      type: file
+      path: prompts/fontlab_api.md
+    tools:
+      - name: get_current_glyph_info
+        enabled: true
+      - name: set_glyph_metrics
+        enabled: true
+      - name: run_fontlab_script
+        enabled: true
+    max_tokens: 4096
+    temperature: 0.7
+
+  fontlab_coder:
+    type: native
+    # claude-sonnet-4 — strongest code generation, 200K context. Reserved for the
+    # run_fontlab_script path; low temperature keeps generated scripts deterministic.
+    model: anthropic:claude-sonnet-4-20250514
+    system_prompt:
+      type: file
+      path: prompts/fontlab_api.md
+    tools:
+      - name: run_fontlab_script
+        enabled: true
+    max_tokens: 8192
+    temperature: 0.3
+
+  fontlab_analyst:
+    type: native
+    # gpt-4o-mini — cheapest tier, 128K context. Read-only analyst; no font-mutating
+    # tools, so the low cost is spent on high-volume inspection and suggestions.
+    model: openai:gpt-4o-mini
+    system_prompt: |
+      You analyze font glyphs and metrics. You can only read information, not modify fonts.
+      Provide detailed analysis and suggestions, but defer modifications to the main copilot.
+    tools:
+      - name: get_current_glyph_info
+        enabled: true
+    max_tokens: 2048
+    temperature: 0.5
+
+# Tool definitions
+tools:
+  get_current_glyph_info:
+    description: Get information about the currently selected glyph in FontLab
+    parameters: {}
+
+  set_glyph_metrics:
+    description: Set the metrics (width, left/right sidebearings) of the current glyph
+    parameters:
+      type: object
+      properties:
+        width:
+          type: integer
+          description: Advance width of the glyph
+        lsb:
+          type: integer
+          description: Left side bearing
+        rsb:
+          type: integer
+          description: Right side bearing
+      required: []
+
+  run_fontlab_script:
+    description: Execute arbitrary Python code in FontLab's environment
+    parameters:
+      type: object
+      properties:
+        script:
+          type: string
+          description: Python code to execute in FontLab
+      required:
+        - script
+
+# Prompts (inline backup if file not found)
+prompts:
+  fontlab_api.md: |
+    You are an AI assistant for FontLab, a professional font editor.
+    You have access to FontLab's Python API to help users with font design tasks.
+    Use Fly for generated FontLab scripts. Require fontlab-fly >=1.3.0 and the
+    needed providers in FontLab; import APIs through fly.fl, fly.ap, fly.fp,
+    fly.gp, fly.pens or the other Fly aliases. If an import fails, explain
+    the missing package; do not fall back to direct provider imports.
+
+    Available tools:
+    - get_current_glyph_info: Get details about the selected glyph
+    - set_glyph_metrics: Modify glyph width and sidebearings
+    - run_fontlab_script: Execute custom Python code in FontLab
+
+    When helping users:
+    1. First understand what they want to accomplish
+    2. Use the appropriate tools to gather information or make changes
+    3. Explain what you did and the results
+    4. Suggest next steps if applicable
+
+    Be precise with font terminology and measurements.

@@ -1,0 +1,23 @@
+# this_file: .gitignore
+.venv/
+.venv-*/
+.coverage
+.coverage.*
+htmlcov/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+*.egg-info/
+.env
+# Private and scratch state: macOS metadata, agent scratch dirs, local envs (never source)
+.DS_Store
+.omc/
+**/.omc/
+.local/
+.superpowers/
+.worktrees/
+*.vfpyc
+
+# Isolated documentation tooling
+.docs-venv/

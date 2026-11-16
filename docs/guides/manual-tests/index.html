@@ -1,0 +1,1139 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A separate AI brain and FontLab chat dock.">
+      
+      
+      
+        <link rel="canonical" href="https://fontlabcom.github.io/fontlab-aidus-agentus/guides/manual-tests/">
+      
+      
+        <link rel="prev" href="../fontlab-installations/">
+      
+      
+        <link rel="next" href="../troubleshooting/">
+      
+      
+        
+      
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../../assets/images/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.1.8">
+    
+    
+      
+        <title>Manual tests - Aidus Agentus for FontLab</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/local.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/components.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script src="https://i.fontlab.com/menu/fontlab.js" defer></script>
+
+  </head>
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manual-checks-in-fontlab" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  <fontlab-menu mode="light" site-label="Aidus Agentus for FontLab"
+                site-url="https://fontlabcom.github.io/fontlab-aidus-agentus/"
+                mobile-menu="materialx" mobile-search="materialx"></fontlab-menu>
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Aidus Agentus for FontLab" class="md-header__button md-logo" aria-label="Aidus Agentus for FontLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aidus Agentus for FontLab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manual tests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fontlabcom/fontlab-aidus-agentus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fontlabcom/fontlab-aidus-agentus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Aidus Agentus for FontLab" class="md-nav__button md-logo" aria-label="Aidus Agentus for FontLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Aidus Agentus for FontLab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fontlabcom/fontlab-aidus-agentus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fontlabcom/fontlab-aidus-agentus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dock-and-acp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dock and ACP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-and-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development and limits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontlab-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FontLab MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-agents-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontlab-installations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual tests
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-and-preservation-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend and preservation controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restored-migration-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restored migration scenarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-display-versus-retained-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live display versus retained history
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-and-preservation-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend and preservation controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restored-migration-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restored migration scenarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-display-versus-retained-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live display versus retained history
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="manual-checks-in-fontlab">Manual checks in FontLab</h1>
+<p>The automated suite (<code>./test.sh</code>) mocks FontLab and PythonQt. These checks cover
+native behavior that needs a running FontLab 9. Ported from the legacy repository's
+<code>tests/MANUAL_TESTS.md</code> and <code>docs/INTEGRATION_TESTS.md</code>, with authentication/timeout scenarios retained from <code>docs/TESTING.md</code>.
+These are acceptance targets, not a record of passing native results.</p>
+<p>Use a dedicated test session containing only <strong>owned disposable copies</strong> of fonts.
+Record the actual FontLab build, host/brain package versions and loaded paths.
+Keep settings/history tests in an isolated test account; never clear an owner's
+chat history or change their credentials. Edits made by the agent are real.</p>
+<h2 id="before-you-start">Before you start</h2>
+<ol>
+<li>Install the host package and the brain environment as in the
+   <a href="../../">README</a>, and set <code>python_exe</code> (<a href="../../configure/">CONFIGURE.md</a>).</li>
+<li>Make the <strong>Aidus Agentus</strong> Scripts-menu folder available: either the
+   orchestrator's link, or <code>fontlab-aidus-install install</code> (check with
+   <code>fontlab-aidus-install check</code>).</li>
+<li>Open a disposable font and select one glyph.</li>
+</ol>
+<h2 id="checks">Checks</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Do this</th>
+<th>Expect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Scripts &gt; Aidus Agentus &gt; <strong>Start Aidus Agentus</strong></td>
+<td>The script returns at once; a dock appears; no traceback in the Output panel.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Watch the dock status</td>
+<td>It reaches a ready state. The brain may take several seconds; native MCP discovery can take up to eight.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Run <strong>Start Aidus Agentus</strong> again</td>
+<td>The existing dock is shown; no second brain process starts.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ask "List the open fonts without changing them."</td>
+<td>A streamed answer that matches FontLab's open fonts.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ask for the metrics of the current glyph</td>
+<td>Width, LSB and RSB match the Glyph panel.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Select the plugin backend as described below; ask to set an ordinary, non-automatic glyph layer's width to 700</td>
+<td>The width changes once. Edit &gt; Undo ("Undo Aidus: Set Glyph Metrics") restores it; Redo reapplies it. Verify complete font preservation, not only width.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ask to run a script that prints the glyph count</td>
+<td>The count matches the font.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Close all fonts, then ask for current glyph info</td>
+<td>A readable error, no traceback; the dock stays usable.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Quit the brain (or wait for an error), then click <strong>Reconnect</strong></td>
+<td>Reconnect is enabled only when disconnected or in error. A fresh session starts; pending requests are discarded, never replayed.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Ask for all glyphs with Unicode values (200+ glyphs); compare the displayed output with the actual tool result</td>
+<td>Output streams; the dock scrolls; FontLab stays responsive. Check live display separately from the bounded saved-history policy below.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Select a non-Latin glyph and ask about it</td>
+<td>Names and characters display correctly.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Switch FontLab between light and dark themes</td>
+<td>The dock stays readable in both.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Send messages, run <code>fontlab_aidus_agentus.shutdown()</code>, start again</td>
+<td>Earlier messages reappear (the newest 500 rows of <code>~/.config/aidus_agentus/history.json</code>).</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Click <strong>Clear</strong></td>
+<td>The dock empties and <code>history.json</code> is removed.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Scripts &gt; Aidus Agentus &gt; <strong>Enable FontLab MCP</strong>, run <code>fontlab_aidus_agentus.shutdown()</code>, start again, ask to list open fonts</td>
+<td>The Output panel confirms enabling; the dock shows a <code>list_fonts</code> tool row, which only the native MCP catalogue provides.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Set <code>python_exe</code> to a Python without the brain extra, start again</td>
+<td>The Output panel shows <code>[Aidus brain]</code> lines and the dock shows the brain's exit code with its last messages. Restore <code>python_exe</code> afterwards.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Scripts &gt; Aidus Agentus &gt; <strong>Open Configuration</strong></td>
+<td>The active JSON opens in your editor; an existing file is never rewritten.</td>
+</tr>
+</tbody>
+</table>
+<p>After a timeout, the outcome of an edit is unknown: inspect the font before
+asking again.</p>
+<h2 id="backend-and-preservation-controls">Backend and preservation controls</h2>
+<p>For check6, set <code>AIDUS_FONTLAB_MCP=off</code> in the dedicated FontLab process before
+starting Aidus. Shut down and start again after changing the environment; retain
+the brain's <code>backend: plugin</code> evidence. A natural-language request alone does
+not prove which tool ran: record the exact fallback tool call and arguments.
+Run a separate native-MCP case with discovery enabled and recorded <code>backend: mcp</code>.
+Do not assume native tools use the plugin's Undo label or history implementation.</p>
+<p>For either writer path, compare the full owned font before, after, Undo, Redo and
+save/reopen, including unrelated glyphs, metadata and dirty state. Test an explicit
+metric assignment to an automatic layer separately: the candidate plugin guard
+must refuse before setters/history. Glyph-info read preservation and native writer
+qualification remain pending; a plausible metric value is insufficient evidence.</p>
+<h2 id="restored-migration-scenarios">Restored migration scenarios</h2>
+<p>The archived checklists also require these distinct cases. Keep failures visible;
+replacing a failed native check with a mock test does not complete it.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Do this</th>
+<th>Acceptance evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1</td>
+<td>With an owned font open, leave no current glyph and request glyph info. Separately test zero chart selection while a current glyph still exists.</td>
+<td>No-current-glyph returns a readable refusal and leaves the font unchanged. Record selection and current-glyph states separately; zero selection alone does not prove no current glyph.</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>During a slow <strong>read-only</strong> response, change glyph selection, scroll the chat and resize the dock.</td>
+<td>Each action remains responsive; no crash or duplicate request. Record which glyph the tool actually inspected.</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>Disconnect only the identified test brain process; try to send a message.</td>
+<td>No edit is queued for later replay. The error is readable, visually distinct and provides connection/reconnect guidance; record any missing presentation as a failure.</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>Send several messages, close/hide the dock, reopen it through the Scripts menu. Then separately run full shutdown/start.</td>
+<td>Compare message content and scroll position in each lifecycle; one dock/brain only. Closing a dock is not equivalent to shutdown.</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>Send a harmless prompt, then a follow-up referring to its answer.</td>
+<td>Both turns appear and the response uses the current session context. Saved display history alone does not establish restored model context.</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>While a read-only response is pending, attempt a second submission.</td>
+<td>Input is disabled or the submission is clearly refused; no overlapping/replayed request or lost first response.</td>
+</tr>
+<tr>
+<td>M7</td>
+<td>In an owned temporary user folder, install/check/uninstall the menu scripts and reopen the menu.</td>
+<td>Only installer-owned unmodified files disappear; unrelated files and edited scripts are preserved/refused. Use the current installer subcommands, not the archived flags.</td>
+</tr>
+<tr>
+<td>M8</td>
+<td>Inspect installed host and brain versions/paths using the troubleshooting guide.</td>
+<td>Record actual package identities and any compatibility warning. The old status-bar/About version-display requirement remains unverified; package metadata is a separate check, not proof of that UI feature.</td>
+</tr>
+<tr>
+<td>M9</td>
+<td>Shut down Aidus; separately quit the dedicated document-free FontLab session.</td>
+<td>The identified brain process exits in each case, with no orphan child. Do not kill unrelated Python processes.</td>
+</tr>
+<tr>
+<td>M10</td>
+<td>Use a disposable brain configuration with required provider credentials deliberately absent.</td>
+<td>A clear startup/request authentication failure reaches the dock, with no secret values or native mutation. Host-side key-check deferral does not prove this provider behavior.</td>
+</tr>
+<tr>
+<td>M11</td>
+<td>Use a controlled slow read-only response and a short positive <code>timeout_seconds</code> in the isolated configuration.</td>
+<td>Timeout is surfaced; reconnect creates a fresh session without replay. Retain the request outcome as unknown until reconciled. A client timeout does not prove native execution stopped.</td>
+</tr>
+</tbody>
+</table>
+<p>The old five-second brain initialization and automatic ten-second reconnection
+expectations are not current promises. Measure startup separately from the short
+menu action, and use the explicit Reconnect control after a failure.</p>
+<h2 id="live-display-versus-retained-history">Live display versus retained history</h2>
+<p>Check a response with known start/end markers both while displayed and after
+shutdown/start. The current dock displays incoming complete message text; saved
+history keeps at most500rows and a bounded JSON payload (2MB), with each message
+cut after20,000characters and marked <code>… [truncated]</code>. Verify the marker and retained
+newest rows, rather than claiming the archived unlimited-retention requirement
+still holds. Record any missing live output separately from expected history
+truncation. Capture only owned fixture content in evidence.</p>
+<p>Record pass/fail/held per case, actual build/package/backend identities, fixture
+hashes, observed output and cleanup results. Historical v0.2.0 evidence does not
+clear these current native acceptance targets.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+  
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <fontlab-footer mode="light"></fontlab-footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/basecoat.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/theme.js"></script>
+      
+    
+  </body>
+</html>

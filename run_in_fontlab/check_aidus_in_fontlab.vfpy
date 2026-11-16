@@ -1,0 +1,54 @@
+# this_file: run_in_fontlab/check_aidus_in_fontlab.vfpy
+"""Report, as JSON, whether Aidus Agentus and the packages it writes code for import.
+
+Successor of the legacy repository's temp/plugin_load_test.vfpy. Run it with:
+open -a "/Applications/FontLab 9.app" run_in_fontlab/check_aidus_in_fontlab.vfpy
+The result goes to AIDUS_LOAD_CHECK (default: aidus_load_check.json in the
+system temp folder) and a summary goes to the Output panel. It imports only; it
+opens no font, starts no brain and changes no preference.
+"""
+import importlib
+import json
+import os
+import sys
+import tempfile
+
+REQUIRED = ("PythonQt", "fontlab", "fontlab_aidus_agentus", "fontlab_aidus_agentus.plugin")
+# Packages the agent may generate code for (see the "FontLab Python Packages You Can Target" section of src/fontlab_aidus_agentus/core/prompts/fontlab_api.md); all optional.
+ECOSYSTEM = (
+    "echopy", "fly", "fontlabapp", "pythonqtside", "fontlab_glyport",
+    "fontlab_fontport", "fontlab_plugmix", "fontlab_remopy",
+)
+PLUGIN_MODULES = ("config", "executor", "transport", "client", "ui", "main")
+OUTPUT = os.environ.get("AIDUS_LOAD_CHECK") or os.path.join(tempfile.gettempdir(), "aidus_load_check.json")
+
+
+def probe(name):
+    try:
+        module = importlib.import_module(name)
+    except Exception as error:  # a broken package must not hide the others
+        return {"ok": False, "error": "%s: %s" % (type(error).__name__, error)}
+    return {"ok": True, "version": str(getattr(module, "__version__", ""))}
+
+
+def build_report():
+    report = {
+        "python": sys.version.split()[0],
+        "required": {name: probe(name) for name in REQUIRED},
+        "ecosystem": {name: probe(name) for name in ECOSYSTEM},
+        "plugin_modules": {name: probe("fontlab_aidus_agentus.plugin." + name) for name in PLUGIN_MODULES},
+    }
+    broken = [
+        name for group in ("required", "plugin_modules") for name, item in report[group].items() if not item["ok"]
+    ]
+    report["missing_required"] = broken
+    report["success"] = not broken
+    return report
+
+
+report = build_report()
+with open(OUTPUT, "w", encoding="utf-8") as handle:
+    json.dump(report, handle, indent=2)
+print("Aidus load check: %s" % ("OK" if report["success"] else "FAILED " + ", ".join(report["missing_required"])))
+print("Optional packages missing: %s" % (", ".join(n for n, i in report["ecosystem"].items() if not i["ok"]) or "none"))
+print("Report: %s" % OUTPUT)

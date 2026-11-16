@@ -1,0 +1,89 @@
+# this_file: run_in_fontlab/introspect_pythonqt.vfpy
+import sys
+import json
+import inspect
+import os
+import datetime
+
+# Try to import core modules
+try:
+    import PythonQt
+except ImportError:
+    PythonQt = None
+
+try:
+    import fl
+except ImportError:
+    fl = None
+
+try:
+    import fontlab
+except ImportError:
+    fontlab = None
+
+def get_attributes(obj):
+    """Recursively get attributes of an object."""
+    attrs = []
+    if obj is None:
+        return attrs
+
+    for name in dir(obj):
+        if name.startswith("__") and name.endswith("__"):
+            continue
+        attrs.append(name)
+    return sorted(attrs)
+
+def analyze_module(module, name):
+    if module is None:
+        return {"name": name, "error": "Module not found"}
+
+    return {
+        "name": name,
+        "type": str(type(module)),
+        "repr": str(module),
+        "attr_count": len(dir(module)),
+        "attrs": get_attributes(module)
+    }
+
+def main():
+    output_path = os.path.expanduser("~/Desktop/aidus_pythonqt_dump.json")
+
+    data = {
+        "timestamp": datetime.datetime.now().timestamp(),
+        "platform": sys.platform,
+        "python_version": sys.version,
+        "modules": [],
+        "errors": []
+    }
+
+    # Analyze PythonQt
+    if PythonQt:
+        data["pythonqt"] = analyze_module(PythonQt, "PythonQt")
+        # Analyze submodules of PythonQt
+        for attr in dir(PythonQt):
+            if attr.startswith("Qt"):
+                submod = getattr(PythonQt, attr)
+                if isinstance(submod, type(PythonQt)): # Check if it's a module
+                    data["modules"].append(analyze_module(submod, attr))
+    else:
+        data["errors"].append("PythonQt module not found")
+
+    # Analyze fl
+    if fl:
+        data["fl"] = analyze_module(fl, "fl")
+    else:
+        data["errors"].append("fl module not found")
+
+    # Analyze fontlab
+    if fontlab:
+        data["fontlab"] = analyze_module(fontlab, "fontlab")
+    else:
+        data["errors"].append("fontlab module not found")
+
+    with open(output_path, "w") as f:
+        json.dump(data, f, indent=2, default=str)
+
+    print("Dump written to {}".format(output_path))
+
+if __name__ == "__main__":
+    main()

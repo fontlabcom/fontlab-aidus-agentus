@@ -1,0 +1,4 @@
+# this_file: run_in_fontlab/enable_fontlab_mcp.vfpy
+"""Compatibility script; reusable native setup belongs to Remopy."""
+from fontlab_remopy import enable_mcp
+enable_mcp()
