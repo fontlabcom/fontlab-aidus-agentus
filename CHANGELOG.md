@@ -10,6 +10,10 @@ this_file: CHANGELOG.md
 - `tests/test_standalone_install.py` tests the stub, the install table and the sdist.
 - The sdist now ships `install.vfpy`.
 - README describes the stub install.
+## 2026-11-14 — Functional work order documented
+
+- Added the owner's functional-progress-first guidance and repository-specific priorities, including cross-package compatibility and a later detailed testing pass. Existing mandatory hooks, holds and unfinished work remain in force.
+- This change updates guidance and planning only; it establishes no new runtime, installed, native or release result.
 
 ## 2026-11-13 — Issue 255 verified release qualification
 

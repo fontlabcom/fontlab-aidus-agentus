@@ -4,6 +4,8 @@ this_file: TODO.md
 
 # Open tasks
 
+- [ ] Reconcile generated Fly programs and package-aware scripts with the current App/Remopy APIs and host/brain split, using focused checks before the detailed dock and native pass.
+
 - [ ] Issue 255: After explicit D43 recovery and admission, qualify generated Fly programs and the package-load script in FontLab, retaining every package-aware, active-editor, M1–M11, authentication, dock lifecycle and shutdown scenario. Service/authentication behavior remains unexercised.
 
 

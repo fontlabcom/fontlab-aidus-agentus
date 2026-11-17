@@ -4,6 +4,12 @@ this_file: WORK.md
 
 # Current round — Issue 255 post-release reconciliation
 
+## 2026-11-14 — Functional work order documented
+
+Updated AGENTS, PLAN and TODO to prioritize useful functional changes and compatible package boundaries, with detailed testing deferred. Existing backlog and prior records are retained. Documentation preservation and policy consistency were checked; no runtime, installed or native checks ran in this documentation-only pass.
+
+Next: reconcile generated Fly programs and package-aware scripts with the current App/Remopy APIs and host/brain split, using focused checks before the detailed dock and native pass.
+
 [fontlab-aidus-agentus v1.1.12](https://github.com/fontlabcom/fontlab-aidus-agentus/releases/tag/v1.1.12) is qualified at `aacf000c295f45393dc2c084fafbbff994d2dc8e`.
 
 Authored native examples, inline teaching and fallback guidance use Fly; the canonical plugin API and metadata entry-point group remain distinct. Private prompt text is retained only as a runtime resource.
