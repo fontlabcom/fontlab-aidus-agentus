@@ -2,6 +2,13 @@
 this_file: PLAN.md
 ---
 
+## Issue 271 installer qualification
+
+Integrate the independently reviewed generated installer through existing full
+repository/hook gates; verify exact-SHA CI and archives, then qualify native
+macOS/Windows use when the serialized guard is available. Preserve owner files.
+
+
 # Forward plan
 
 ## Functional work order — 2026-11-14
