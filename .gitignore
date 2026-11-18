@@ -21,3 +21,16 @@ dist/
 
 # Isolated documentation tooling
 .docs-venv/
+
+# Python and macOS (pypitrust)
+*.py[cod]
+.eggs/
+build/
+.ruff_cache/
+.mypy_cache/
+.tox/
+.nox/
+
+# Python and macOS (pypitrust)
+__version__.py
+_version.py

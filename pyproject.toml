@@ -1,6 +1,6 @@
 # this_file: pyproject.toml
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
+requires = ["hatchling>=1.27", "hatch-vcs>=0.4"]
 build-backend = "hatchling.build"
 [project]
 name = "fontlab-aidus-agentus"
