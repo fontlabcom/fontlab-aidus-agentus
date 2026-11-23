@@ -264,7 +264,7 @@ License: proprietary Fontlab Ltd.; original notices retained.
 
 The maintained site source is [src_docs/md/index.md](src_docs/md/index.md);
 [src_docs/mkdocs.yml](src_docs/mkdocs.yml) configures ProperDocs with fly-january
-0.1.1 and the FontLab menu and footer. To rebuild the tracked `docs/` site and
+0.2.0 and the FontLab menu and footer. To rebuild the tracked `docs/` site and
 run its tests from the repository root:
 
 ```sh

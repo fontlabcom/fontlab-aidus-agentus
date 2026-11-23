@@ -2,10 +2,12 @@
 this_file: WORK.md
 ---
 
+The strict ProperDocs build uses fly-january 0.2.0 with the FontLab menu and
+footer.
+
 ## 2026-11-23 — Documentation theme
 
-The strict ProperDocs build uses fly-january 0.1.1 with the FontLab menu and
-footer. All 62 generated files reproduced at the same source epoch. The 36
+All 62 generated files reproduced at the same source epoch. The 36
 documentation tests, 886 brain tests and 762 host tests passed. Browser checks
 belong to the orchestrator.
 
