@@ -2,6 +2,13 @@
 this_file: WORK.md
 ---
 
+## 2026-11-23 — Documentation theme
+
+The strict ProperDocs build uses fly-january 0.1.1 with the FontLab menu and
+footer. All 62 generated files reproduced at the same source epoch. The 36
+documentation tests, 886 brain tests and 762 host tests passed. Browser checks
+belong to the orchestrator.
+
 # Current round — Issue 255 post-release reconciliation
 
 ## 2026-11-14 — Functional work order documented

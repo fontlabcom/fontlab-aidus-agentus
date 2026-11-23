@@ -7,6 +7,7 @@ import tempfile
 from types import SimpleNamespace
 import unittest
 
+from fly_january.assets import rescale_materialx
 from src_docs import english_search
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,6 +26,7 @@ class EnglishSearchTests(unittest.TestCase):
             target = self.site / row['path']
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(data)
+        rescale_materialx(self.site)
         (self.site / 'search').mkdir()
         self.index = {'config': {'lang': ['en']}, 'docs': [{'location': 'index.html', 'title': 'Glyph tools', 'text': 'Meaningful complete search fixture'}]}
         (self.site / 'search/search_index.json').write_text(json.dumps(self.index))
@@ -94,12 +96,13 @@ class EnglishSearchTests(unittest.TestCase):
         english_search.on_post_build(self.config)
         self.assertFalse((self.site / 'assets/javascripts/lunr/wordcut.js').exists())
 
-    def test_real_properdocs_materialx_configuration_uses_the_expected_search_plugin(self):
+    def test_real_properdocs_fly_configuration_uses_the_expected_search_plugin(self):
         import properdocs.replacement
         from properdocs.config import load_config
         config = load_config(str(ROOT / 'src_docs/mkdocs.yml'))
-        self.assertIs(english_search.on_config(config), config)
-        self.assertEqual(config['plugins']['materialx/search'].config['lang'], ['en'])
+        config.plugins.on_config(config)
+        self.assertIs(config.plugins['materialx/search'], config.plugins['fly-january/search'])
+        self.assertEqual(config.plugins['materialx/search'].config['lang'], ['en'])
 
     def test_manifest_count_or_helper_boundary_drift_is_rejected(self):
         policy = json.loads((ROOT / 'src_docs/md/assets/english-search-omissions.json').read_text())

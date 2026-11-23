@@ -263,6 +263,15 @@ License: proprietary Fontlab Ltd.; original notices retained.
 ## Documentation source
 
 The maintained site source is [src_docs/md/index.md](src_docs/md/index.md);
-[src_docs/mkdocs.yml](src_docs/mkdocs.yml) configures the locked ProperDocs/MaterialX
-light build. Generated HTML belongs in `docs/`. Private Pages publication remains
-owner-held; local builds do not establish hosted or native behavior.
+[src_docs/mkdocs.yml](src_docs/mkdocs.yml) configures ProperDocs with fly-january
+0.1.1 and the FontLab menu and footer. To rebuild the tracked `docs/` site and
+run its tests from the repository root:
+
+```sh
+uv venv --python 3.13 .docs-venv
+uv pip install --python .docs-venv/bin/python --require-hashes -r src_docs/requirements.txt
+PATH="$PWD/.docs-venv/bin:$PATH" sh src_docs/build.sh
+.docs-venv/bin/python -B -m unittest discover -s tests_docs -v
+```
+
+Private Pages publication remains owner-held.
