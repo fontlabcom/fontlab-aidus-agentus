@@ -101,7 +101,7 @@ class EnglishSearchTests(unittest.TestCase):
         from properdocs.config import load_config
         config = load_config(str(ROOT / 'src_docs/mkdocs.yml'))
         config.plugins.on_config(config)
-        self.assertIs(config.plugins['materialx/search'], config.plugins['fly-january/search'])
+        self.assertIs(config.plugins['materialx/search'], config.plugins['fly-january-remote/search'])
         self.assertEqual(config.plugins['materialx/search'].config['lang'], ['en'])
 
     def test_manifest_count_or_helper_boundary_drift_is_rejected(self):

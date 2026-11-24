@@ -4,6 +4,7 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Documentation uses fly-january 0.4.0 or later (remote theme assets) and keeps MaterialX assets local.
 - Documentation builds accept fly-january 0.3.0 or later.
 
 - PyPI Trusted Publishing requires the project owner to configure GitHub repository `fontlabcom/fontlab-aidus-agentus`, workflow `release.yml` and environment `pypi`. The local `publish.sh` dispatches this workflow (`403fca2`).
