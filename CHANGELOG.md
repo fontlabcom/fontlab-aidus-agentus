@@ -4,6 +4,8 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Documentation builds accept fly-january 0.3.0 or later.
+
 - PyPI Trusted Publishing requires the project owner to configure GitHub repository `fontlabcom/fontlab-aidus-agentus`, workflow `release.yml` and environment `pypi`. The local `publish.sh` dispatches this workflow (`403fca2`).
 - Issue 271 — the installer reached main at `acb7464`. Release run 44414672850 and Documentation run 44412329542 passed at that SHA. Both PyPI v1.1.19 archives matched their published SHA-256 digests, and the sdist installer matched the tagged source byte for byte.
 - Issue 242 — verified the GitHub repository and primary checkout names with `git remote get-url origin` and `git rev-parse --git-common-dir`. At v1.1.12 (`aacf000c`), the ordinary wheel and sdist install checks matched all 42 host files.

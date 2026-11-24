@@ -59,7 +59,7 @@ API references checked: AgentPool 2.8.8 installed source (`agentpool.models.mani
 
 ## Documentation only
 
-A separate Python 3.13 environment installs fly-january 0.2.1 for the site's
+A separate Python 3.13 environment installs fly-january 0.3.0 or later for the site's
 FontLab menu and footer. `src_docs/requirements.txt` locks the theme and its
 build dependencies by hash, including ProperDocs 1.6.7, MkDocs 1.6.1,
 MaterialX 10.1.8 and PyMdown 11.0.1.
