@@ -11,6 +11,14 @@ All 62 generated files reproduced at the same source epoch. The 36
 documentation tests, 886 brain tests and 762 host tests passed. Browser checks
 belong to the orchestrator.
 
+## 2026-11-18 — Issue 271 generated installer candidate
+
+Regenerated `install.vfpy` with Instamix 1.0.18, preserving project declarations and
+runtime source. Exact reviewed-template byte parity and import-sentinel/wheel-order smoke checks pass. Existing focused installer tests pass (exit 0, 12.07 seconds).
+Task-owned graph impact/change analysis cannot resolve an index; structural caller
+checks supplement this unavailable evidence. Full repository delivery gates,
+independent cohort review and native qualification remain pending. No owner install ran.
+
 # Current round — Issue 255 post-release reconciliation
 
 ## 2026-11-14 — Functional work order documented

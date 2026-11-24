@@ -2,6 +2,9 @@
 this_file: TODO.md
 ---
 
+- [ ] Issue 271: independently review and integrate the generated installer through repository gates, verify exact-SHA CI/archives, and qualify macOS/Windows native execution after serialized admission.
+
+
 # Open tasks
 
 - [ ] Reconcile generated Fly programs and package-aware scripts with the current App/Remopy APIs and host/brain split, using focused checks before the detailed dock and native pass.
