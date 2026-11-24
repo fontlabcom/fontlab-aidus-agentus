@@ -4,6 +4,11 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- PyPI Trusted Publishing requires the project owner to configure GitHub repository `fontlabcom/fontlab-aidus-agentus`, workflow `release.yml` and environment `pypi`. The local `publish.sh` dispatches this workflow (`403fca2`).
+- Issue 271 — the installer reached main at `acb7464`. Release run 44414672850 and Documentation run 44412329542 passed at that SHA. Both PyPI v1.1.19 archives matched their published SHA-256 digests, and the sdist installer matched the tagged source byte for byte.
+- Issue 242 — verified the GitHub repository and primary checkout names with `git remote get-url origin` and `git rev-parse --git-common-dir`. At v1.1.12 (`aacf000c`), the ordinary wheel and sdist install checks matched all 42 host files.
+- Issue 255 — reconciled authored Fly examples and package guidance with the host/brain split at `aacf000c`. The release checks passed 920 brain tests, 796 host tests and 11 provider routes.
+
 - Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
 
 ## 2026-11-18 — Issue 271 installer source alignment
