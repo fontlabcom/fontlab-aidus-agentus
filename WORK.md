@@ -2,7 +2,7 @@
 this_file: WORK.md
 ---
 
-The strict ProperDocs build uses fly-january 0.2.0 with the FontLab menu and
+The strict ProperDocs build uses fly-january 0.2.1 with the FontLab menu and
 footer.
 
 ## 2026-11-23 — Documentation theme

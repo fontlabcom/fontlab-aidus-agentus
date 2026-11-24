@@ -16,7 +16,7 @@ archives or historical source bodies. None is an authored input to this site.
 
 ## Current English browser payload
 
-The [browser-component record](assets/current-frontend-notices.json) binds the fly-january 0.2.0 and MaterialX 10.1.8 browser assets to exact upstream notices, package archives and source maps. Product terms above remain unchanged.
+The [browser-component record](assets/current-frontend-notices.json) binds the fly-january 0.2.1 and MaterialX 10.1.8 browser assets to exact upstream notices, package archives and source maps. Product terms above remain unchanged.
 
 The [English-only omission manifest](assets/english-search-omissions.json) binds all 35 unused lunr-languages 1.20.0 helpers, including Wordcut and TinySegmenter. The build rejects theme/search-language, corpus, vendor-set/hash and local HTML-reference drift before removing them. The retained payload includes seven unchanged MaterialX assets, two MaterialX stylesheets rescaled by fly-january, and five assets from the fly-january wheel. Historical complete outputs remain recovery evidence; omitted helpers are not represented as currently distributed or relicensed.
 
@@ -28,7 +28,7 @@ FontLab serves the shared menu and footer script. Adobe Fonts and Google Fonts s
 
 | Component / retained terms | Version | Exact full notice or upstream README licence section |
 | --- | --- | --- |
-| fly-january | 0.2.0 | [Apache 2.0 licence](assets/current-frontend/fly-january/LICENSE.txt) |
+| fly-january | 0.2.1 | [Apache 2.0 licence](assets/current-frontend/fly-january/LICENSE.txt) |
 | clipboard | 2.0.11 | [LICENSE.txt](assets/current-frontend/clipboard/LICENSE.txt) |
 | tiny-emitter | 2.1.0 | [LICENSE.txt](assets/current-frontend/tiny-emitter/LICENSE.txt) |
 | escape-html | 1.0.3 | [LICENSE.txt](assets/current-frontend/escape-html/LICENSE.txt) |

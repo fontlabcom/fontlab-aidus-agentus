@@ -106,7 +106,7 @@ installing into its user folder or publishing a site.
 
 ## Documentation source/build checks
 
-`src_docs/mkdocs.yml` uses fly-january 0.2.0 for the FontLab menu and footer.
+`src_docs/mkdocs.yml` uses fly-january 0.2.1 for the FontLab menu and footer.
 Use the exact hash-locked `src_docs/requirements.txt` in a separate Python 3.13
 environment. With that environment active, run `sh src_docs/build.sh`, then `python -B -m unittest discover -s
 tests_docs -v`. Preserve source epoch, immutable source/output lineage and complete
